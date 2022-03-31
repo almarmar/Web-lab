@@ -35,5 +35,5 @@
             </div>
           </div>
         </div>
-        <p><a href="/shelf" class="button">Перейти к просмотру</a></p>
+    <p><a href="/shelf" class="button">Начать просмотр</a><p>
     {% endblock %}

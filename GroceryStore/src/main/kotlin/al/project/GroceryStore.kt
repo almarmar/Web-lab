@@ -4,16 +4,19 @@ import al.project.domain.Product
 import al.project.domain.Shelf
 import al.project.models.*
 import org.http4k.core.*
+import org.http4k.core.ContentType.Companion.TEXT_HTML
 import org.http4k.core.Method.GET
 import org.http4k.core.Status.Companion.FOUND
 import org.http4k.core.Status.Companion.OK
 import org.http4k.core.body.form
+import org.http4k.core.body.formAsMap
 import org.http4k.filter.DebuggingFilters.PrintRequest
 import org.http4k.routing.*
 import org.http4k.server.Undertow
 import org.http4k.server.asServer
 import org.http4k.template.PebbleTemplates
 import org.http4k.template.TemplateRenderer
+import org.http4k.template.viewModel
 
 fun app(
     shelf: Shelf,
@@ -68,10 +71,7 @@ fun app(
             val model = ProductViewModel(product)
             Response(OK).body(renderer(model))
         },
-
         static(ResourceLoader.Classpath("/al/project/public/"))
-
-
     )
 }
 

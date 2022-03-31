@@ -1,7 +1,0 @@
-# GroceryStore
-
-## Package
-```
-./gradlew distZip
-```
-

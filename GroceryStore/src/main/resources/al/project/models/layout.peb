@@ -1,15 +1,5 @@
     <!doctype html>
     <html class="no-js" lang="ru" dir="ltr">
-    <div class="top-bar">
-          <div class="top-bar-left">
-            <ul class="menu">
-                <li><a href="/start">Страница старт</a></li>
-                <li><a href="/shelf">Посмотреть товар</a></li>
-                <li><a href="/shelf/new">Добавить новый товар</a></li>
-            </ul>
-          </div>
-    </div>
-    <hr>
       <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -18,8 +8,8 @@
         <link rel="stylesheet" href="/css/foundation.css">
         <link rel="stylesheet" href="/css/app.css">
       </head>
-    </hr>
     <body>
+
     <div class="grid-container">
     {% block content %}
             Нет содержимого

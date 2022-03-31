@@ -1,5 +1,0 @@
-{% extends "./layout.peb" %}
-
-{% block content %}
-    {{model.description}}
-{% endblock %}
