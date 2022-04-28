@@ -6,8 +6,8 @@
     <p>Название: {{model.product.name}}</p>
     <p>Описание:</p>
     <p>{{model.product.description}}</p>
-    <p>Цена: {{model.product.price}}</p>
-    <p>Количество: {{model.product.quality}}</p>
+    <p>Цена: {{model.product.price}} &#8381;</p>
+    <p>Количество: {{model.product.quantity}}</p>
     <p>Производитель: {{model.product.vendor}}</p>
     <p>Страна производства: {{model.product.country}}</p>
 {% endblock %}

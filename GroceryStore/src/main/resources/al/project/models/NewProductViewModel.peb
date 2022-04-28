@@ -1,21 +1,64 @@
 {% extends "./layout.peb" %}
     {% block content %}
+
+    {% if model.form.errors is not empty %}
+        <div class="grid-x grid-padding-x">
+            <div class="medium-12 cell warning">
+                <ul>
+                    {% for error in model.form.errors %}
+                    <li>{{error}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+
     <p><a href="/shelf" class="button">К списку товаров</a><p>
         <form method="POST">
-            <p>Введите категорию товара:</p>
-            <input name="category" type="text">
-            <p>Введите название товара:</p>
-            <input name="name" type="text">
-            <p>Введите описание:</p>
-            <textarea name="description"></textarea>
-            <p>Введите цену товара:</p>
-            <input name="price" type="text">
-            <p>Введите количество товара:</p>
-            <input name="quantity" type="number">
-            <p>Введите производителя:</p>
-            <input name="vendor" type="text">
-            <p>Введите страну производства:</p>
-            <input name="country" type="text">
+            <div class="grid-x grid-padding-x">
+                <div class="large-12 cell">
+                    <label>Введите категорию товара:
+                    <input type="text" name="category"
+                        value="{{model.form.fields["category"]|first}}"
+                    >
+                    </label>
+                </div>
+            </div>
+            <div class="grid-x grid-padding-x">
+                <div class="large-6 medium-6 cell">
+                    <label>Введите название товара:</label>
+                    <input name="name" type="text"
+                        value="{{model.form.fields["name"]|first}}"
+                    >
+                </div>
+                <div class="large-6 medium-6 cell">
+                    <label>Введите описание:</label>
+                    <textarea name="description">{{model.form.fields["description"]|first}}</textarea>
+                </div>
+                <div class="large-6 medium-6 cell">
+                    <p>Введите цену товара:</p>
+                    <input name="price" type="text"
+                        value="{{model.form.fields["price"]|first}}"
+                    >
+                </div>
+                <div class="large-6 medium-6 cell">
+                    <p>Введите количество товара:</p>
+                    <input name="quantity" type="number"
+                        value="{{model.form.fields["quantity"]|first}}"
+                    >
+                </div>
+                <div class="large-6 medium-6 cell">
+                    <p>Введите производителя:</p>
+                    <input name="vendor" type="text"
+                        value="{{model.form.fields["vendor"]|first}}"
+                    >
+                </div>
+                <div class="large-6 medium-6 cell">
+                    <p>Введите страну производства:</p>
+                    <input name="country" type="text"
+                        value="{{model.form.fields["country"]|first}}"
+                    >
+                </div>
             <input type="submit" value="Добавить продукт" class="button">
         </form>
     {% endblock %}
